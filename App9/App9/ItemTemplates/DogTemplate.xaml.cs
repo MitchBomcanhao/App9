@@ -13,7 +13,7 @@
         {
             if(this.BindingContext is Animal item)
             {
-                this.AnimalName.Text = item.Name;
+                this.AnimalName.Text = item.Category + " # " + item.Name;
             }
             
         }
