@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:app9="clr-namespace:App9"
              x:Class="App9.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <app9:ItemTemplateSelector x:Key="ItemTemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <CollectionView x:Name="collectionView"
-                      IsGrouped="true"
-                     EmptyView="No items to display" 
-                    >
-        <CollectionView.ItemTemplate>
+                    IsGrouped="true"
+                    EmptyView="No items to display" 
+                    ItemTemplate="{StaticResource ItemTemplateSelector}" >
+        <!--<CollectionView.ItemTemplate>
             <DataTemplate>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
@@ -33,7 +38,7 @@
                                VerticalOptions="End" />
                 </Grid>
             </DataTemplate>
-        </CollectionView.ItemTemplate>
+        </CollectionView.ItemTemplate>-->
         <CollectionView.GroupHeaderTemplate>
             <DataTemplate>
                 <Label Text="{Binding Name}"

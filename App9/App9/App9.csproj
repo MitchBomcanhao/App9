@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,7 +11,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ItemTemplates\ElephantTemplate.xaml.cs">
+      <DependentUpon>ElephantTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ItemTemplates\CatTemplate.xaml.cs">
+      <DependentUpon>CatTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ItemTemplates\MonkeyTemplate.xaml.cs">
+      <DependentUpon>MonkeyTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ItemTemplates\BearTemplate.xaml.cs">
+      <DependentUpon>BearTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ItemTemplates\DogTemplate.xaml.cs">
+      <DependentUpon>DogTemplate.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ItemTemplates\DogTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
